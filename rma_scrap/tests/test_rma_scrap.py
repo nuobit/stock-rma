@@ -40,7 +40,7 @@ class TestRmaScrap(common.SingleTransactionCase):
                 "company_id": cls.env.ref("base.main_company").id,
             }
         )
-        cls.wh = cls.env.ref("stock.warehouse0")
+        cls.wh = cls.env.ref("rma.warehouse_rma")
         cls.stock_rma_location = cls.wh.lot_rma_id
         cls.scrap_loc = cls.env["stock.location"].create(
             {
