@@ -43,7 +43,7 @@ class TestRma(common.SavepointCase):
 
         cls.partner_id = cls.env.ref("base.res_partner_2")
         cls.stock_location = cls.env.ref("stock.stock_location_stock")
-        cls.wh = cls.env.ref("stock.warehouse0")
+        cls.wh = cls.env.ref("rma.warehouse_rma")
         cls.stock_rma_location = cls.wh.lot_rma_id
         cls.customer_location = cls.env.ref("stock.stock_location_customers")
         cls.supplier_location = cls.env.ref("stock.stock_location_suppliers")
@@ -1039,7 +1039,7 @@ class TestRma(common.SavepointCase):
                 "code": "SHP",
             }
         )
-        wh2.resupply_wh_ids = self.env.ref("stock.warehouse0")
+        wh2.resupply_wh_ids = self.env.ref("rma.warehouse_rma")
         wh2.rma_in_this_wh = True
         wh2.lot_rma_id = self.env["stock.location"].create(
             {
