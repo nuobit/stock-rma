@@ -88,7 +88,7 @@
     <record id="rule_rma_dropship_return" model="stock.rule">
         <field name="name">Customer → Supplier</field>
         <field name="action">pull</field>
-        <field name="warehouse_id" ref="stock.warehouse0" />
+        <field name="warehouse_id" ref="rma.warehouse_rma" />
         <field name="location_id" ref="stock.stock_location_suppliers" />
         <field name="location_src_id" ref="stock.stock_location_customers" />
         <field name="procure_method">make_to_stock</field>
@@ -99,7 +99,7 @@
     <record id="rule_rma_dropship" model="stock.rule">
         <field name="name">Supplier → Customer</field>
         <field name="action">pull</field>
-        <field name="warehouse_id" ref="stock.warehouse0" />
+        <field name="warehouse_id" ref="rma.warehouse_rma" />
         <field name="location_id" ref="stock.stock_location_customers" />
         <field name="location_src_id" ref="stock.stock_location_suppliers" />
         <field name="procure_method">make_to_stock</field>
@@ -107,8 +107,8 @@
         <field name="picking_type_id" ref="rma.picking_type_rma_dropship" />
     </record>
 
-    <!-- Enable the RMA in warehouse0 -->
-    <record id="stock.warehouse0" model="stock.warehouse">
+    <!-- Enable the RMA in warehouse -->
+    <record id="warehouse_rma" model="stock.warehouse">
         <field name="rma_in_this_wh" eval="True" />
     </record>
 
