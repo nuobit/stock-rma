@@ -30,7 +30,7 @@ class TestAccountMoveLineRmaOrderLine(common.SavepointCase):
         cls.group_account_invoice = cls.env.ref("account.group_account_invoice")
         cls.group_account_manager = cls.env.ref("account.group_account_manager")
         cls.stock_location = cls.env.ref("stock.stock_location_stock")
-        wh = cls.env.ref("stock.warehouse0")
+        wh = cls.env.ref("rma.warehouse_rma")
         cls.stock_rma_location = wh.lot_rma_id
         cls.customer_location = cls.env.ref("stock.stock_location_customers")
         cls.supplier_location = cls.env.ref("stock.stock_location_suppliers")
